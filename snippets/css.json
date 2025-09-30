@@ -1,0 +1,54 @@
+{
+    "snippets": [
+        {
+            "prefix": "bg",
+            "body": "background: ${1:color};",
+            "description": "Set background color"
+        },
+        {
+            "prefix": "m",
+            "body": "margin: ${1:0};",
+            "description": "Set margin"
+        },
+        {
+            "prefix": "p",
+            "body": "padding: ${1:0};",
+            "description": "Set padding"
+        },
+        {
+            "prefix": "d",
+            "body": "display: ${1:block|inline|flex|grid};",
+            "description": "Set display type"
+        },
+        {
+            "prefix": "f",
+            "body": "font-family: '${1:font}', sans-serif;",
+            "description": "Set font family"
+        },
+        {
+            "prefix": "fs",
+            "body": "font-size: ${1:16px};",
+            "description": "Set font size"
+        },
+        {
+            "prefix": "c",
+            "body": "color: ${1:color};",
+            "description": "Set text color"
+        },
+        {
+            "prefix": "b",
+            "body": "border: ${1:1px} solid ${2:color};",
+            "description": "Set border"
+        },
+        {
+            "prefix": "r",
+            "body": "border-radius: ${1:0};",
+            "description": "Set border radius"
+        },
+        {
+            "prefix": "t",
+            "body": "text-align: ${1:left|center|right};",
+            "description": "Set text alignment"
+        }
+    ]
+}

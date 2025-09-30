@@ -1,0 +1,92 @@
+{
+    "snippets": [
+        {
+            "prefix": "html5",
+            "body": [
+                "<!DOCTYPE html>",
+                "<html lang=\"en\">",
+                "<head>",
+                "    <meta charset=\"UTF-8\">",
+                "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+                "    <title>${1:Document}</title>",
+                "</head>",
+                "<body>",
+                "    $0",
+                "</body>",
+                "</html>"
+            ],
+            "description": "Basic HTML5 template"
+        },
+        {
+            "prefix": "link",
+            "body": [
+                "<link rel=\"${1:stylesheet}\" href=\"${2:style.css}\">"
+            ],
+            "description": "Link to a stylesheet"
+        },
+        {
+            "prefix": "script",
+            "body": [
+                "<script src=\"${1:script.js}\"></script>"
+            ],
+            "description": "Link to a JavaScript file"
+        },
+        {
+            "prefix": "div",
+            "body": [
+                "<div class=\"${1:class-name}\">$0</div>"
+            ],
+            "description": "Create a div with a class"
+        },
+        {
+            "prefix": "img",
+            "body": [
+                "<img src=\"${1:image.jpg}\" alt=\"${2:description}\" />"
+            ],
+            "description": "Insert an image"
+        },
+        {
+            "prefix": "a",
+            "body": [
+                "<a href=\"${1:url}\" target=\"${2:_blank}\">$0</a>"
+            ],
+            "description": "Create a hyperlink"
+        },
+        {
+            "prefix": "ul",
+            "body": [
+                "<ul>",
+                "    <li>$1</li>",
+                "</ul>"
+            ],
+            "description": "Create an unordered list"
+        },
+        {
+            "prefix": "ol",
+            "body": [
+                "<ol>",
+                "    <li>$1</li>",
+                "</ol>"
+            ],
+            "description": "Create an ordered list"
+        },
+        {
+            "prefix": "table",
+            "body": [
+                "<table>",
+                "    <thead>",
+                "        <tr>",
+                "            <th>$1</th>",
+                "        </tr>",
+                "    </thead>",
+                "    <tbody>",
+                "        <tr>",
+                "            <td>$2</td>",
+                "        </tr>",
+                "    </tbody>",
+                "</table>"
+            ],
+            "description": "Create a table"
+        }
+    ]
+}

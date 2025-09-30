@@ -1,0 +1,86 @@
+{
+    "snippets": [
+        {
+            "prefix": "log",
+            "body": [
+                "console.log('$1');"
+            ],
+            "description": "Log output to the console"
+        },
+        {
+            "prefix": "for",
+            "body": [
+                "for (let $1 = 0; $1 < $2; $1++) {",
+                "    $0",
+                "}"
+            ],
+            "description": "For loop structure"
+        },
+        {
+            "prefix": "if",
+            "body": [
+                "if ($1) {",
+                "    $0",
+                "}"
+            ],
+            "description": "If statement structure"
+        },
+        {
+            "prefix": "func",
+            "body": [
+                "function $1($2) {",
+                "    $0",
+                "}"
+            ],
+            "description": "Function declaration"
+        },
+        {
+            "prefix": "arrow",
+            "body": [
+                "const $1 = ($2) => {",
+                "    $0",
+                "};"
+            ],
+            "description": "Arrow function declaration"
+        },
+        {
+            "prefix": "fetch",
+            "body": [
+                "fetch('$1')",
+                "    .then(response => response.json())",
+                "    .then(data => {",
+                "        $0",
+                "    })",
+                "    .catch(error => console.error('Error:', error));"
+            ],
+            "description": "Fetch API call"
+        },
+        {
+            "prefix": "timeout",
+            "body": [
+                "setTimeout(() => {",
+                "    $0",
+                "}, $1);"
+            ],
+            "description": "Set a timeout"
+        },
+        {
+            "prefix": "interval",
+            "body": [
+                "setInterval(() => {",
+                "    $0",
+                "}, $1);"
+            ],
+            "description": "Set an interval"
+        },
+        {
+            "prefix": "event",
+            "body": [
+                "element.addEventListener('$1', (event) => {",
+                "    $0",
+                "});"
+            ],
+            "description": "Event listener"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "files.autoSave": "onWindowChange",
+    "javascript.validate.enable": true,
+    "css.validate": true,
+    "html.validate.scripts": true,
+    "eslint.enable": true,
+    "eslint.alwaysShowRuleFailuresAsWarnings": false,
+    "prettier.requireConfig": true,
+    "prettier.singleQuote": true,
+    "prettier.trailingComma": "all"
+}
