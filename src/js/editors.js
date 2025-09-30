@@ -67,12 +67,29 @@
 
         function initEditors(files) {
             projectFiles = files || [];
+            // defensive sanitization: if any file content looks like UI wiring or a dumped script,
+            // replace that file with a safe default to avoid raw UI code showing up in editors.
+            function isLikelyUIInjection(text){
+                if (!text || typeof text !== 'string') return false;
+                const suspects = ['const splitter','onPointerDown(','setPointerCapture','splitter.addEventListener','pointerdown','document.documentElement.style.setProperty','function onPointerDown','window.addEventListener(\'pointer'];
+                for (let s of suspects) if (text.indexOf(s) !== -1) return true;
+                if (text.length > 50000) return true; // too large
+                return false;
+            }
             const map = {};
             projectFiles.forEach(f => { map[f.type] = f; });
 
-            editors.html = createEditor('html', map.html ? map.html.content : '<!doctype html>\n<html>\n<head>\n<meta charset="utf-8">\n</head>\n<body>\n</body>\n</html>');
-            editors.css = createEditor('css', map.css ? map.css.content : '/* CSS */');
-            editors.javascript = createEditor('javascript', map.javascript ? map.javascript.content : '// JavaScript');
+            const defaultHtml = '<!doctype html>\n<html>\n<head>\n<meta charset="utf-8">\n</head>\n<body>\n</body>\n</html>';
+            const defaultCss = '/* CSS */';
+            const defaultJs = '// JavaScript';
+
+            const htmlContent = map.html && typeof map.html.content === 'string' && !isLikelyUIInjection(map.html.content) ? map.html.content : defaultHtml;
+            const cssContent = map.css && typeof map.css.content === 'string' && !isLikelyUIInjection(map.css.content) ? map.css.content : defaultCss;
+            const jsContent = map.javascript && typeof map.javascript.content === 'string' && !isLikelyUIInjection(map.javascript.content) ? map.javascript.content : defaultJs;
+
+            editors.html = createEditor('html', htmlContent);
+            editors.css = createEditor('css', cssContent);
+            editors.javascript = createEditor('javascript', jsContent);
         }
 
         function getEditorContent(type) {

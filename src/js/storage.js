@@ -10,7 +10,14 @@ function saveProjectToLocalStorage(project) {
 // Load the project state from local storage
 function loadProjectFromLocalStorage() {
     const projectData = localStorage.getItem(STORAGE_KEY);
-    return projectData ? JSON.parse(projectData) : null;
+    if (!projectData) return null;
+    try {
+        return JSON.parse(projectData);
+    } catch (e) {
+        // corrupted/non-JSON data detected. Remove it and return null so caller falls back to defaults
+        try { localStorage.removeItem(STORAGE_KEY); } catch (err) {}
+        return null;
+    }
 }
 
 // Clear the project data from local storage
