@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advanced Web Playground</title>
-    <!-- inline svg favicon to avoid /favicon.ico 404 noise -->
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='100%25' height='100%25' fill='%236be29a'/%3E%3Ctext x='50%25' y='50%25' font-size='9' dominant-baseline='middle' text-anchor='middle' fill='%23000500'%3EPR%3C/text%3E%3C/svg%3E">
+    <!-- favicon (updated to the provided logo) -->
+    <link rel="icon" href="https://i.postimg.cc/1Xk9bjC2/Copilot-20250921-112342.png">
     <link rel="stylesheet" href="src/css/reset.css">
     <link rel="stylesheet" href="src/css/styles.css">
     <!-- CodeMirror (v5) - editor assets (CDN) -->
@@ -32,6 +32,14 @@
         .controls{display:flex;align-items:center;gap:8px}
         .toggle{display:inline-flex;align-items:center;gap:6px}
 
+    /* header branding */
+    .site-header{background:#0b79b8;color:#fff;padding:10px 14px}
+    .site-header .header-top{display:flex;align-items:center;justify-content:flex-end;gap:16px}
+    #brand-logo-small{height:36px;width:36px;object-fit:contain;border-radius:6px}
+    .site-header .header-main{display:flex;align-items:center;gap:14px;padding:12px 0}
+    #brand-logo-large{height:72px;width:72px;object-fit:contain;border-radius:10px}
+    .site-header h1{margin:0;font-size:20px;font-weight:700}
+
         /* splitter */
         #splitter{width:10px;cursor:col-resize;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:6px}
 
@@ -44,16 +52,22 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Advanced Web Playground</h1>
-        <nav>
-            <button id="btn-new-project" title="Create a new starter project">New Project</button>
-            <button id="btn-import" title="Import project JSON">Import</button>
-            <input type="file" id="import-file" accept="application/json" style="display:none">
-            <button id="btn-export" title="Export project as JSON">Export</button>
-            <button id="btn-reset" title="Reset saved project">Reset</button>
-            <button id="btn-share" title="Create shareable link">Share</button>
-        </nav>
+    <header class="site-header">
+        <div class="header-top">
+            <img id="brand-logo-small" src="https://i.postimg.cc/1Xk9bjC2/Copilot-20250921-112342.png" alt="Logo">
+            <nav>
+                <button id="btn-new-project" title="Create a new starter project">New Project</button>
+                <button id="btn-import" title="Import project JSON">Import</button>
+                <input type="file" id="import-file" accept="application/json" style="display:none">
+                <button id="btn-export" title="Export project as JSON">Export</button>
+                <button id="btn-reset" title="Reset saved project">Reset</button>
+                <button id="btn-share" title="Create shareable link">Share</button>
+            </nav>
+        </div>
+        <div class="header-main">
+            <img id="brand-logo-large" src="https://i.postimg.cc/1Xk9bjC2/Copilot-20250921-112342.png" alt="Logo">
+            <h1>Advanced Web Playground</h1>
+        </div>
     </header>
     <main>
         <div id="editor-container">
